@@ -1,4 +1,4 @@
-<h1>DonationHub</h1>
+<h1>Real Estate Map</h1>
 Team: Naomi, Amy, Abe, Avneet
 
 Time: Fall 2022
@@ -17,22 +17,23 @@ empty for now
 **Languages and Tools:**
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-* [SQLAlchemy](https://www.sqlalchemy.org/)
+
 
 <p> <a href="https://getbootstrap.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://flask.palletsprojects.com/" target="_blank"> <img src="https://d2knvm16wkt3ia.cloudfront.net/assets/svg-icon/flask.svg" alt="flask" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a></p>
 
 (HTML5/CSS3/Bootstrap/Flask/Python)
 
-## Installation:
+# Installation:
 
-Go to our GitHub page and export our project files (clone/downloading the zip) into a workspace folder: 
+Go to our GitHub page and export our project files (clone or download the zip) into a workspace folder: 
 
 https://github.com/ntackyt/DataViz_RealEstate.git
 
 Through terminal (or VSCode’s terminal), move into the workspace folder. From there, you can do the following steps to install the virtual environment and the rest of the dependents. From there you should be able to run the site: 
 
-### Flask, Python, and Django
+## <b>Flask and Python Installation</b>
 
 <i>To learn more about Flask, [here](https://www.askpython.com/python-modules/flask/create-hello-world-in-flask) is a tutorial of how to setup and create a Hello World app in flask (This is not required for this project, but will help you understand flask).</i> Otherwise just ignore and follow the next few steps to install + setup for this project. 
 
@@ -106,7 +107,7 @@ flask run
 ```
 (Make sure you’re within the folder that has app.py)
 
-5. You should be able to run and open the application now.
+5. You should be able to run and open the application now. If you're adjusting the css/js files, please hit <i>command + shift + r</i> to refresh cache on chrome (commands might differ for different web programs).
 
 6. To deactivate the virtual environment, just type:
 ```

@@ -1,12 +1,19 @@
 from flask import render_template
 from flask import Flask
+import os
+
+
+
+TEMPLATE_DIR = os.path.abspath('../templates')
+STATIC_DIR = os.path.abspath('../static')
 
 app = Flask(__name__)
+# app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html', title='Welcome')
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 
-# app.run(host='0.0.0.0', port=81)
+if __name__ == '__main__':
+    app.run(debug=False, port=8080)
