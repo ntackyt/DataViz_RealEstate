@@ -3,13 +3,14 @@ window.onload = init;
 function init(){
     
     const map = new ol.Map({
+        
         view: new ol.View({
             center: [-8528855.151432998, 4762665.100871488], 
             zoom: 15,
             maxZoom: 10
             //minZoom: 0
             //rotation: 0.5 these are in radins and go clockwise
-
+        
         }),
         layers: [
             new ol.layer.Tile({
