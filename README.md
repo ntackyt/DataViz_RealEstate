@@ -43,20 +43,25 @@ If you're using Vscode,  please install the <i>sqlite</i> extension for better v
 
 1. Install python 3.6, which should come with pip. Follow the installation instructions and check if it’s correctly installed by typing: 
 ```
-py –version 
+python –version 
 ```
 2. Install and set up a virtualenv (**PLEASE DO NOT COMMIT YOUR VIRTUAL ENVIRONMENT TO GITHUB** ): 
 ```
-py –m pip install virtualenv 
-py –m venv venv 
-. venv\scripts\activate
+python –m pip install virtualenv 
+python –m venv venv 
+```
+
+3. Enter the terminal (specifically cmd instead of powershell if you're on visual studio code, click on the right side icon of vscode's terminal window to change it). Then type in:
+```
+.\venv\Scripts\activate
 ```
 
 3. Install the extensions 
 ```
-py -m pip install flask 
-py -m pip install flask-sqlalchemy 
-py -m pip install requests 
+python -m pip install flask 
+python -m pip install flask-sqlalchemy 
+python -m pip install requests
+python -m pip install geojson 
 ```
 
 4. Once you’ve installed these dependents, create a flask command that will be used to specify how to load the application (assuming you’re using bash, otherwise check out the flask site): 
@@ -99,6 +104,7 @@ source <name of environment>/bin/activate
 pip install flask
 pip install flask-sqlalchemy
 pip install requests
+pip install geojson
 ```
 4. Once you've installed these dependents, create a flask command that will be used to specify how to load the application <i>(assuming you're using bash, otherwise check out the [flask site](https://flask.palletsprojects.com/en/2.0.x/cli/)</i>:
 ```
