@@ -2,15 +2,15 @@ window.onload = init;
 
 function init(){
     
+    
     const map = new ol.Map({
-        
         view: new ol.View({
             center: [-8528855.151432998, 4762665.100871488], 
             zoom: 15,
             maxZoom: 10
             //minZoom: 0
             //rotation: 0.5 these are in radins and go clockwise
-        
+
         }),
         layers: [
             new ol.layer.Tile({
@@ -25,7 +25,11 @@ function init(){
         console.log(e.coordinate);
     })
 
+    // initialize color 
+    var color = '#fff5eb';
+    
     var styles = function(geojson,resolution) {
+
         if (geojson.get('MD_County_Data_median_listing_price') >= 600000 ) {color = '#8c2d04' ;}
         else if (geojson.get('MD_County_Data_median_listing_price') >= 532493 ){color ='#d94801';}
         else if (geojson.get('MD_County_Data_median_listing_price') >= 464986 ){color ='#f16913';}
@@ -41,26 +45,29 @@ function init(){
               color: 'black',
               width: 0.7,
             }),
-            fill: new ol.style.Fill({
+            fill: new ol.style.Fill({      
               color: color,
             }),
           }),
         ]
       };
 
+
     var geojson = new ol.layer.Vector({
         source: new ol.source.Vector({
-          url: `MD_Boundaries_RealEstateData.geojson`,
-          format: new ol.format.GeoJSON()
+          format: new ol.format.GeoJSON(),
+          url: `static/dist/js/MD_Boundaries_RealEstateData.geojson`
         }),
         zIndex: 1, 
-        style: styles,
+        style: function (feature, resolution) {
+            return styles(feature, resolution);
+      }
       });
     map.addLayer(geojson)
-    
+
     /*
     function showCountyName(e){
-      if(ol.format.filter.within(e.coordinate, geojson.get("geometry"))){
+      if(ol.zformat.filter.within(e.coordinate, geojson.get("geometry"))){
         console.log("Click in county")
       }
     }
