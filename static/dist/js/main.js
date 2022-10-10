@@ -21,10 +21,6 @@ function init(){
     })
 
 
-    map.on('click', function(e){
-        console.log(e.coordinate);
-    })
-
     // initialize color 
     var color = '#fff5eb';
     
@@ -64,6 +60,43 @@ function init(){
       }
       });
     map.addLayer(geojson)
+
+
+    // Vector Feature Popup logic
+    const overlayContainerElement = document.querySelector('.overlay-container')
+    const overlayLayer = new ol.Overlay({
+      element: overlayContainerElement
+    });
+    map.addOverlay(overlayLayer);
+
+    const overlayCounty = document.getElementById('feature-county');
+    const overlayListingCount = document.getElementById('feature-listing-count');
+    const overlayMedianDays = document.getElementById('feature-median-days');
+    const overlayNewListingsCount = document.getElementById('feature-new-listings-count');
+    const overlayPriceIncreased = document.getElementById('feature-price-increased');
+    const overlayPriceReduced = document.getElementById('feature-price-reduced');
+
+    map.on('click', function(e){
+      overlayLayer.setPosition(undefined);
+      map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
+        let clickedCoord = e.coordinate;
+        let county = feature.get('COUNTY');
+        let listing_count = feature.get("MD_County_Data_active_listing_count");
+        let median_days = feature.get("MD_County_Data_median_days_on_market");
+        let new_listings_count = feature.get("MD_County_Data_new_listing_count");
+        let price_increased = feature.get("MD_County_Data_price_increased_count");
+        let price_reduced = feature.get("MD_County_Data_price_reduced_count");
+
+        overlayLayer.setPosition(clickedCoord);
+        overlayCounty.innerHTML = "County: " + county;
+        overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
+        overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
+        overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
+        overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
+        overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
+      })
+    });
+
 
     /*
     function showCountyName(e){

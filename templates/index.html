@@ -38,9 +38,19 @@
 
     <!-- MAP -->
     <div id="js-map" class="map"></div>
-    <script type="module" src="{{ url_for('static', filename='dist/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='dist/js/main.js')}}"></script>
     <!-- <script  src="{{ url_for('static', filename='dist/node_modules/ol/dist/ol.js')}}"></script> -->
     <script  src="{{ url_for('static', filename='dist/js/libs/v6.1.1-dist/ol.js')}}"></script>
+
+    <!-- overlay -->
+    <div class="overlay-container">
+      <span class="overlay-text" id="feature-county"></span><br>
+      <span class="overlay-text" id="feature-listing-count"></span><br>
+      <span class="overlay-text" id="feature-median-days"></span><br>
+      <span class="overlay-text" id="feature-new-listings-count"></span><br>
+      <span class="overlay-text" id="feature-price-increased"></span><br>
+      <span class="overlay-text" id="feature-price-reduced"></span><br>
+    </div>
 
     <!-- LEGEND -->
     <div id="state-legend" class="legend"> 
