@@ -98,34 +98,50 @@ function init(){
     });
 
 
-    /*
-    function showCountyName(e){
-      if(ol.zformat.filter.within(e.coordinate, geojson.get("geometry"))){
-        console.log("Click in county")
-      }
-    }
-    
-   var md_geojson = MD_Boundaries_RealEstateData.geojson
 
-    map.on('click', function(e){
-      if(ol.format.filter.within(e.coordinate, geojson.get("geometry"))){
-        console.log("Click in county")
-      }
-    })
+    // hover functionality
 
-    var countyGeometry = new FileReader();
-    
-    var county = new ol.layer.Vector({
-      source: new ol.source.Vector({
-       features: [
-           new ol.Feature({
-               geometry: new ol.geom.MultiPolygon(md_geojson.features.properties.geometry)//geojson.features.properties.geometry)
-           })
-        ]
+    const selectStyle = new ol.style.Style({
+      fill: new ol.style.Fill({
+        color: '#eeeeee',
+      }),
+      stroke: new ol.style.Stroke({
+        color: 'rgba(255, 255, 255, 0.1)',
+        width: 4,
       }),
     });
-    map.addLayer(county);
-    */
 
+    const hoverContainerElement = document.querySelector('.hover-container')
+    const hoverLayer = new ol.Overlay({
+      element: hoverContainerElement
+    });
+    map.addOverlay(hoverLayer);
+
+    const hoverCounty = document.getElementById('feature-hover');
+
+    let hoverElement = null;
+    map.on('pointermove', function (e) {
+      
+      if (hoverElement !== null) {
+        hoverElement.setStyle(undefined);
+        hoverElement = null;
+      }
+      hoverLayer.setPosition(undefined);
+      
+      map.forEachFeatureAtPixel(e.pixel, function(f){
+        hoverElement = f;
+        selectStyle.getFill().setColor(f.get('COLOR') || '#eeeeee');
+        f.setStyle(selectStyle);
+        return true;  
+      });
+
+      if (hoverElement) {
+        hoverLayer.setPosition(e.coordinate);
+        hoverCounty.innerHTML = hoverElement.get('COUNTY') + " County";
+        console.log(hoverElement.get('COUNTY'))
+      } /* else {
+        hoverCounty.innerHTML = '&nbsp;';
+      } */ 
+    });
 
 }
