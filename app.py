@@ -3,8 +3,7 @@ from flask import Flask
 import requests
 import os
 import json
-import geojson
-
+# import geojson
 
 
 TEMPLATE_DIR = os.path.abspath('../templates')
