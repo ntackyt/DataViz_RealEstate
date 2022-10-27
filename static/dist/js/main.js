@@ -182,7 +182,6 @@ function init(){
 
   let hoverElement = null;
   map.on('pointermove', function (e) {
-    
     if (hoverElement !== null) {
       hoverElement.setStyle(undefined);
       hoverElement = null;
@@ -197,10 +196,10 @@ function init(){
     });
 
     if (hoverElement) {
+      console.log(e.coordinate);
       hoverLayer.setPosition(e.coordinate);
-      console.log(hoverElement.getProperties())
       if(hoverElement.get("lyr") == 1){
-      hoverCounty.innerHTML = hoverElement.get('RDC_County_county_name') + " County";
+        hoverCounty.innerHTML = hoverElement.get('RDC_County_county_name') + " County";
       } else {
         hoverCounty.innerHTML = hoverElement.get('RDC_State_state');
       }
