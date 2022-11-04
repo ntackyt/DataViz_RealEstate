@@ -7,8 +7,6 @@ function init(){
           center: [-8528855.151432998, 4762665.100871488], 
           zoom: 6,
           maxZoom: 20
-          //minZoom: 0
-          //rotation: 0.5 these are in radins and go clockwise
       }),
       layers: [
           new ol.layer.Tile({
@@ -19,19 +17,36 @@ function init(){
   })
 
 
+  // Put transparent county layers
+var baseCountiesGeoJson = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          format: new ol.format.GeoJSON(),
+          url: `static/dist/js/US_County_Data.geojson`
+        }),
+        zIndex: 1, 
+        style: function (feature, resolution) {
+            return styles_county(feature, resolution);
+      },
+      minZoom: 7
+      });
+    baseCountiesGeoJson.setOpacity(0.6)
+    map.addLayer(baseCountiesGeoJson)
+
+
   // Initialize color 
   var color = '#fff5eb';
   
   // County coloring
   var styles_county = function(geojson,resolution) {
+
       if (geojson.get('RDC_County_median_listing_price') >= 600000 ) {color = '#8c2d04' ;}
       else if (geojson.get('RDC_County_median_listing_price') >= 532493 ){color ='#d94801';}
       else if (geojson.get('RDC_County_median_listing_price') >= 464986 ){color ='#f16913';}
       else if (geojson.get('RDC_County_median_listing_price') >= 397479 ){color ='#fd8d3c';}
       else if (geojson.get('RDC_County_median_listing_price') >= 329971 ){color ='#fdae6b';}
-      else if (geojson.get('RDC_County_median_listing_price') >= 262464 ){color ='#fdd0a2';}
-      else if (geojson.get('RDC_County_median_listing_price') >= 186519 ){color ='#fee6ce';}
-      else {color = '#fff5eb';}
+      else if (geojson.get('RDC_County_median_listing_price') >= 327000 ){color ='#fdd0a2';}
+      else if (geojson.get('RDC_County_median_listing_price') >= 217000 ){color ='#fee6ce';}
+      //else {color = '#fff5eb';}
 
       return  [
       new ol.style.Style({
@@ -48,14 +63,14 @@ function init(){
 
   // State coloring
   var styles_state = function(geojson,resolution) {
-      if (geojson.get('RDC_State_median_listing_price') >= 600000 ) {color = '#8c2d04' ;}
-      else if (geojson.get('RDC_State_median_listing_price') >= 532493 ){color ='#d94801';}
-      else if (geojson.get('RDC_State_median_listing_price') >= 464986 ){color ='#f16913';}
-      else if (geojson.get('RDC_State_median_listing_price') >= 397479 ){color ='#fd8d3c';}
-      else if (geojson.get('RDC_State_median_listing_price') >= 329971 ){color ='#fdae6b';}
-      else if (geojson.get('RDC_State_median_listing_price') >= 262464 ){color ='#fdd0a2';}
-      else if (geojson.get('RDC_State_median_listing_price') >= 186519 ){color ='#fee6ce';}
-      else {color = '#fff5eb';}
+      if (geojson.get('RDC_State_median_listing_price') >= 879500 ) {color = '#8c2d04' ;}
+      else if (geojson.get('RDC_State_median_listing_price') >= 769000 ){color ='#d94801';}
+      else if (geojson.get('RDC_State_median_listing_price') >= 659000 ){color ='#f16913';}
+      else if (geojson.get('RDC_State_median_listing_price') >= 548000 ){color ='#fd8d3c';}
+      else if (geojson.get('RDC_State_median_listing_price') >= 439000 ){color ='#fdae6b';}
+      else if (geojson.get('RDC_State_median_listing_price') >= 327000 ){color ='#fdd0a2';}
+      else if (geojson.get('RDC_State_median_listing_price') >= 217000 ){color ='#fee6ce';}
+      //else {color = '#fff5eb';}
 
       return [
       new ol.style.Style({
@@ -79,7 +94,7 @@ function init(){
       style: function (feature, resolution) {
           return styles_state(feature, resolution);
       },
-      maxZoom: 20
+      maxZoom: 7
   });
   map.addLayer(statesGeoJson)
 
