@@ -1,6 +1,5 @@
 window.onload = init;
 
-
 function init(){
   const map = new ol.Map({
       view: new ol.View({
@@ -13,6 +12,8 @@ function init(){
               source: new ol.source.OSM()
           })
       ],
+      visible: true,
+      title: 'OSMStreetStandard',
       target: "js-map"
   })
 
@@ -23,11 +24,12 @@ var baseCountiesGeoJson = new ol.layer.Vector({
           format: new ol.format.GeoJSON(),
           url: `static/dist/js/US_County_Data.geojson`
         }),
+        visible: false,
+        title: 'baseCountiesGeoJson',
         zIndex: 1, 
         style: function (feature, resolution) {
             return styles_county(feature, resolution);
       },
-      minZoom: 7
       });
     baseCountiesGeoJson.setOpacity(0.6)
     map.addLayer(baseCountiesGeoJson)
@@ -90,6 +92,8 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         format: new ol.format.GeoJSON(),
         url: `static/dist/js/US_State.geojson`
       }),
+      visible: false,
+      title: 'statesGeoJson',
       zIndex: 1, 
       style: function (feature, resolution) {
           return styles_state(feature, resolution);
@@ -99,7 +103,27 @@ var baseCountiesGeoJson = new ol.layer.Vector({
   map.addLayer(statesGeoJson)
 
 
-  // Vector Feature Popup logic
+  //Layer Group
+  const baseLayerGroup = new ol.layer.Group({
+    layers: [
+      statesGeoJson, baseCountiesGeoJson
+    ]
+  })
+  map.addLayer(baseLayerGroup);
+
+  // Layer Switcher
+  const baseLayerElements = document.querySelectorAll('.sidebar > input[type=radio]');
+  for (let baseLayerElement of baseLayerElements){
+    baseLayerElement.addEventListener('change', function(){
+      let baseLayerElementValue = this.value;
+      baseLayerGroup.getLayers().forEach(function(element, index, array) {
+        let baseLayerTitle = element.get('title');
+        element.setVisible(baseLayerTitle === baseLayerElementValue);
+      })
+    })
+  }
+
+  // Vector Feature Popup logic (counties)
   const overlayContainerElement = document.querySelector('.overlay-container')
   const overlayLayer = new ol.Overlay({
     element: overlayContainerElement
@@ -137,41 +161,42 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         }
         else {
           ///////////////
-          // state data display - uncomment for state data level view
+          // ≈çstate data display - uncomment for state data level view
 
-          // let clickedCoord = e.coordinate;
-          // let state = feature.get('name');
-          // let listing_count = feature.get("RDC_State_active_listing_count");
-          // let median_days = feature.get("RDC_State_median_days_on_market");
-          // let new_listings_count = feature.get("RDC_State_new_listing_count");
-          // let price_increased = feature.get("RDC_State_price_increased_count");
-          // let price_reduced = feature.get("RDC_State_price_reduced_count");
+          let clickedCoord = e.coordinate;
+          let state = feature.get('name');
+          let listing_count = feature.get("RDC_State_active_listing_count");
+          let median_days = feature.get("RDC_State_median_days_on_market");
+          let new_listings_count = feature.get("RDC_State_new_listing_count");
+          let price_increased = feature.get("RDC_State_price_increased_count");
+          let price_reduced = feature.get("RDC_State_price_reduced_count");
 
-          // overlayLayer.setPosition(clickedCoord);
-          // overlayCounty.innerHTML = "State: " + state;
-          // overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
-          // overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
-          // overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
-          // overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
-          // overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
+          overlayLayer.setPosition(clickedCoord);
+          overlayCounty.innerHTML = "State: " + state;
+          overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
+          overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
+          overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
+          overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
+          overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
           ///////////////
 
+
           // statesGeoJson.getSource().clear();
-          let state_abr = feature.get('stusab');
-          var countiesGeoJson = new ol.layer.Vector({
-            source: new ol.source.Vector({
-              format: new ol.format.GeoJSON(),
-              url: `static/dist/js/US_County_Data.geojson`
-            }),
-            zIndex: 1, 
-            style: function (feature, resolution) {
-              if(feature.get('RDC_County_state') == state_abr){
-                return styles_county(feature, resolution);
-              }
-          },
-            minZoom: 1
-          });
-          map.addLayer(countiesGeoJson)
+          // let state_abr = feature.get('stusab');
+          // var countiesGeoJson = new ol.layer.Vector({
+          //   source: new ol.source.Vector({
+          //     format: new ol.format.GeoJSON(),
+          //     url: `static/dist/js/US_County_Data.geojson`
+          //   }),
+          //   zIndex: 1, 
+          //   style: function (feature, resolution) {
+          //     if(feature.get('RDC_County_state') == state_abr){
+          //       return styles_county(feature, resolution);
+          //     }
+          // },
+          //   minZoom: 1
+          // });
+          // map.addLayer(countiesGeoJson)
         } 
       })
   });

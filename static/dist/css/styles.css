@@ -1,7 +1,28 @@
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
   height: 100%;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 100%;
+  background-color: darkgray;
+  color: white;
+}
+
+.state-data {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 3px;
+}
+
+.sidebar {
+  margin-left: 15px;
 }
 
 .map {
@@ -37,7 +58,7 @@ body {
       margin-right: 5px;
       width: 10px;
   }
-  
+
   button{
     color:red;
   }
@@ -54,6 +75,7 @@ body {
     bottom: 100%;
     left: 50%;
     margin-left: -80px;
+    margin-top: 20px;
   }
 
   .hover-container {
@@ -68,6 +90,13 @@ body {
     bottom: 100%;
     left: 50%;
     margin-left: -80px;
+    margin-bottom: 30px;
+  }
+
+  .hover-container:hover {
+    transform: translate(0, -100px);
+    transition: 1s;
+    margin-bottom: 30px;
   }
 
   header{

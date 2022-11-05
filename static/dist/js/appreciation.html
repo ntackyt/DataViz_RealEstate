@@ -23,7 +23,7 @@
             var mainContainer = document.getElementById("myData");
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].month_date_yyyymm + ' ' + data[i].state;
+                div.innerHTML = 'Date: ' + data[i].month_date_yyyymm + ' State: ' + data[i].state + ' Median Listing Price: ' + data[i].median_listing_price;
                 mainContainer.appendChild(div);
             }
         }
