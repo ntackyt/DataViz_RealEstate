@@ -93,18 +93,60 @@
               <a class="dropdown-item" href="#top">Wisconsin</a>
               <a class="dropdown-item" href="#top">Wyoming</a>
 
-            </div>
-          </div>
-          <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Price
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#top">Less Than $500,000</a>
-              <a class="dropdown-item" href="#top">More Than $500,000</a>
-            </div>
-          </div>
+        <!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            City
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#top">Max ...</a></li>
+            <li><a class="dropdown-item" href="#top">Min ...</a></li>
+            <li><a class="dropdown-item" href="#top">Other ...</a></li>
+          </ul>
         </div>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Zipcode
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#top">Max ...</a></li>
+            <li><a class="dropdown-item" href="#top">Min ...</a></li>
+            <li><a class="dropdown-item" href="#top">Other ...</a></li>
+          </ul>
+        </div> -->
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Price
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#top">Max ...</a></li>
+            <li><a class="dropdown-item" href="#top">Min ...</a></li>
+            <li><a class="dropdown-item" href="#top">Other ...</a></li>
+          </ul>
+        </div>
+
+        <!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Bed & Baths
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#top">Max ...</a></li>
+            <li><a class="dropdown-item" href="#top">Min ...</a></li>
+            <li><a class="dropdown-item" href="#top">Other ...</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Home Type
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#top">Max ...</a></li>
+            <li><a class="dropdown-item" href="#top">Min ...</a></li>
+            <li><a class="dropdown-item" href="#top">Other ...</a></li>
+          </ul>
+        </div> -->
 
       <!-- <div class="col-md-3">
         <form role="search">
@@ -118,62 +160,62 @@
   <div class="grid-container">
     <div class="grid-1">
       <div class="sidebar">
-        <h2>Filters</h2>
+        <h2 style="text-align: center;">Layers</h2>
         <input type="radio" name="baseLayerRadioButton" value="baseCountiesGeoJson"> Counties<br>
         <input type="radio" name="baseLayerRadioButton" value="statesGeoJson"> States <br>
         <input type="radio" name="baseLayerRadioButton" value="map" checked> Street View<br>
       </div>
+      <br><h2 style="text-align: center;"> Appreciation Data <br> (by State)</h2>
       <div class="state-data">
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/AL?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AL</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/AK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AK</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/AZ?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AZ</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/AR?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AR</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/CA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/CO?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CO</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/CT?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CT</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/DE?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">DE</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/FL?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">FL</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/GA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">GA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/HI?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">HI</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/ID?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ID</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/IN?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">IN</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/IA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">IA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/KS?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">KS</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/KY?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">KY</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/LA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">LA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/ME?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ME</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/MD?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MD</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/MN?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MN</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/MS?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MS</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/MO?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MO</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/MT?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MT</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NE?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NE</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NV?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NV</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NH?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NH</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NJ?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NJ</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NY?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NY</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/NC?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NC</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/ND?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ND</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/OH?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OH</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/OK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OK</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/OR?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OR</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/PA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">PA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/RI?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">RI</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/SC?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">SC</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/SD?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">SD</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/TN?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">TN</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/TX?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">TX</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/UT?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">UT</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/VT?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">VT</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/VA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">VA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/WA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WA</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/WV?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WV</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/WI?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WI</a>
-        <a class="btn btn-primary" href="https://public.tableau.com/views/State_Graphs/WY?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WY</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/Sheet1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AL</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AK</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AZ_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AZ</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AR_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">AR</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/CA_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/CO_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CO</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/CT_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">CT</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/DE_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">DE</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/DC?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">DC</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/FL?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">FL</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/GA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">GA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/HI?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">HI</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/ID?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ID</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/IN?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">IN</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/IA?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">IA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/KS?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">KS</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/KY_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">KY</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/LA_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">LA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/ME_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ME</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/MD_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MD</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/MN_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MN</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/MS_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MS</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/MO_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MO</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/MT_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">MT</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NE_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NE</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NV_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NV</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NH_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NH</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NJ_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NJ</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NY_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NY</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/NC_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">NC</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/ND_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">ND</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/OH_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OH</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/OK_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OK</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/OR_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">OR</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/PA_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">PA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/RI_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">RI</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/SC_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">SC</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/SD_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">SD</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/TN_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">TN</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/TX_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">TX</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/UT_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">UT</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/VT_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">VT</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/VA_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">VA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/WA_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WA</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/WV_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WV</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/WI_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WI</a>
+        <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/WY_1?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">WY</a>
       </div>
-
     </div>
-
     <div class="grid-2">
       <div id="js-map" class="map"></div>
     </div>
