@@ -4,14 +4,16 @@ body {
   margin: 0;
   height: 100%;
   padding: 0;
+  overflow: hidden;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 20vw 80vw;
   grid-template-rows: 100%;
-  background-color: darkgray;
-  color: white;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  height: 100%;
 }
 
 .state-data {
@@ -26,20 +28,22 @@ body {
 }
 
 .map {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
-  padding-top:6rem;
+  /* padding-top:3.5rem; */
   bottom: 0;
   width: 100%;
+  /* height: 92vh; */
+  /* position: absolute; */
   height: 100%;
 }
 
 .legend {
-    background-color: #000;
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     bottom: 30px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: #fff ;
+    color: rgb(0, 0, 0) ;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 10px;
     position: absolute;
@@ -145,16 +149,22 @@ body {
     fill: currentColor;
   }
 
+  .navbar{
+    display: inline-block;
+    float:none;
+  }
+
   .nav-scroller {
-    position: relative;
+    /* position: relative; */
     z-index: 2;
     height: 2.75rem;
     overflow-y: hidden;
   }
 
   .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
+    /* display: flex; */
+    /* display: block; */
+    /* flex-wrap: nowrap; */
     padding-bottom: 1rem;
     margin-top: -1px;
     overflow-x: auto;

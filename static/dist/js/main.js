@@ -100,6 +100,7 @@ var baseCountiesGeoJson = new ol.layer.Vector({
       },
       maxZoom: 7
   });
+  statesGeoJson.setOpacity(0.6)
   map.addLayer(statesGeoJson)
 
 
@@ -137,47 +138,68 @@ var baseCountiesGeoJson = new ol.layer.Vector({
   const overlayPriceIncreased = document.getElementById('feature-price-increased');
   const overlayPriceReduced = document.getElementById('feature-price-reduced');
 
+
+  var previous_state = " ";
+  var previous_county = " ";
+  var click_counter = 0;
   // click on map function
-  map.on('click', function(e){      
-      overlayLayer.setPosition(undefined);
+  map.on('click', function(e){   
+      overlayLayer.setPosition(undefined);   
       map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
         if(feature.get("lyr") == 1){
-          let clickedCoord = e.coordinate;
-          let county = feature.get('NAME');
-          let listing_count = feature.get("RDC_County_active_listing_count");
-          let median_days = feature.get("RDC_County_median_days_on_market");
-          let new_listings_count = feature.get("RDC_County_new_listing_count");
-          let price_increased = feature.get("RDC_County_price_increased_count");
-          let price_reduced = feature.get("RDC_County_price_reduced_count");
 
-          overlayLayer.setPosition(clickedCoord);
-          overlayCounty.innerHTML = "County: " + county;
-          overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
-          overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
-          overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
-          overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
-          overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
-      
+          if(feature.get('NAME') == previous_county && click_counter >= 2){
+            // clear overlay
+            overlayLayer.setPosition(undefined);
+            click_counter = 0;
+          }else{
+            let clickedCoord = e.coordinate;
+            let county = feature.get('NAME');
+            let listing_count = feature.get("RDC_County_active_listing_count");
+            let median_days = feature.get("RDC_County_median_days_on_market");
+            let new_listings_count = feature.get("RDC_County_new_listing_count");
+            let price_increased = feature.get("RDC_County_price_increased_count");
+            let price_reduced = feature.get("RDC_County_price_reduced_count");
+
+            overlayLayer.setPosition(clickedCoord);
+            
+            overlayCounty.innerHTML = "County: " + county;
+            overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
+            overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
+            overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
+            overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
+            overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
+            click_counter++;
+          }
         }
-        else {
+        else{
+          console.log("state map show - sate name saved: " + previous_state);
           ///////////////
           // ≈çstate data display - uncomment for state data level view
+          if( previous_state.includes(feature.get('name')) && click_counter >= 2 && previous_state == document.getElementById('feature-county').innerText){
+            // clear overlay
+            overlayLayer.setPosition(undefined);
+            previous_state = "";
+            click_counter = 0;
+          }else{
+            let clickedCoord = e.coordinate;
+            let state = feature.get('name');
+            let listing_count = feature.get("RDC_State_active_listing_count");
+            let median_days = feature.get("RDC_State_median_days_on_market");
+            let new_listings_count = feature.get("RDC_State_new_listing_count");
+            let price_increased = feature.get("RDC_State_price_increased_count");
+            let price_reduced = feature.get("RDC_State_price_reduced_count");
 
-          let clickedCoord = e.coordinate;
-          let state = feature.get('name');
-          let listing_count = feature.get("RDC_State_active_listing_count");
-          let median_days = feature.get("RDC_State_median_days_on_market");
-          let new_listings_count = feature.get("RDC_State_new_listing_count");
-          let price_increased = feature.get("RDC_State_price_increased_count");
-          let price_reduced = feature.get("RDC_State_price_reduced_count");
-
-          overlayLayer.setPosition(clickedCoord);
-          overlayCounty.innerHTML = "State: " + state;
-          overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
-          overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
-          overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
-          overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
-          overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
+            overlayLayer.setPosition(clickedCoord);
+            
+            overlayCounty.innerHTML = "State: " + state;
+            overlayListingCount.innerHTML = "Number of Listings: " + listing_count;
+            overlayMedianDays.innerHTML = "Median days on the market: " + median_days;
+            overlayNewListingsCount.innerHTML = "Number of new listings: " + new_listings_count;
+            overlayPriceIncreased.innerHTML = "Number of price increased: " + price_increased;
+            overlayPriceReduced.innerHTML = "Number of price reduced:  " + price_reduced;
+            click_counter++;
+          }
           ///////////////
 
 
@@ -198,8 +220,16 @@ var baseCountiesGeoJson = new ol.layer.Vector({
           // });
           // map.addLayer(countiesGeoJson)
         } 
+        console.log(click_counter);
       })
+      // Stores previous state/county choice for deselect
+      if(map.get("lyr") == 1){
+        previous_county = document.getElementById('feature-county').innerText;
+      }else{
+        previous_state = document.getElementById('feature-county').innerText;
+      }
   });
+
 
   // hover functionality
   const selectStyle = new ol.style.Style({
@@ -211,6 +241,8 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         width: 4,
       }),
   });
+
+
 
   const hoverContainerElement = document.querySelector('.hover-container')
   const hoverLayer = new ol.Overlay({

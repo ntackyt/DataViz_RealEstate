@@ -25,87 +25,44 @@
     
   </head>
   <body>
+
     <!-- NAV BAR -->
-    <nav class="navbar md-6 sticky-top navbar-dark bg-dark" aria-label="First navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Let The Home Search Begin!</a>
-          <form role="search">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          </form>
-        </div> 
+    <nav class="navbar navbar-dark" style="margin-left:0; padding-left:0; background-color: #000;" aria-label="First navbar example">
 
-        <!-- PUT BUTTONS HERE --> 
-        <div id = "search-filter" class = "filter"> 
-        <div class="dropdown">  
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            State 
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
+        <div class="col-md-12"  style="margin-left:0;">
+          <!-- PUT BUTTONS HERE --> 
+          <a class="navbar-brand" href="#">Let The Home Search Begin!</a>
+          
+          <div class="btn-group">
+            <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">Tableau</a>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              State 
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#top">Max ...</a>
+              <a class="dropdown-item" href="#top">Min ...</a>
+              <a class="dropdown-item" href="#top">Other ...</a>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Price
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#top">Max ...</a>
+              <a class="dropdown-item" href="#top">Min ...</a>
+              <a class="dropdown-item" href="#top">Other ...</a>
+            </div>
+          </div>
         </div>
 
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            City
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Zipcode
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Price
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Bed & Baths
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Home Type
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="container-fluid">
-          <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">Tableau</a>
-        </div>
-      </div>
+      <!-- <div class="col-md-3">
+        <form role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div> -->
     </nav>
 
 
@@ -206,13 +163,13 @@
     <!-- LEGEND -->
     <div id="state-legend" class="legend"> 
         <h4> Median Price </br> by State </h4>
-        <div><span style="background-color: #fee6ce"></span>217000</div>
-        <div><span style="background-color: #fdd0a2"></span>327000</div>
-        <div><span style="background-color: #fdae6b"></span>439000</div>
-        <div><span style="background-color: #fd8d3c"></span>548000</div>
-        <div><span style="background-color: #f16913"></span>659000</div>
-        <div><span style="background-color: #d94801"></span>769000</div>
-        <div><span style="background-color: #8c2d04"></span>879500</div>
+        <div><span style="background-color: #fee6ce; opacity: .6;"></span>217000</div>
+        <div><span style="background-color: #fdd0a2; opacity: .6;"></span>327000</div>
+        <div><span style="background-color: #fdae6b; opacity: .6;"></span>439000</div>
+        <div><span style="background-color: #fd8d3c; opacity: .6;"></span>548000</div>
+        <div><span style="background-color: #f16913; opacity: .6;"></span>659000</div>
+        <div><span style="background-color: #d94801; opacity: .6;"></span>769000</div>
+        <div><span style="background-color: #8c2d04; opacity: .6;"></span>879500</div>
     </div>
 
   
