@@ -173,6 +173,22 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 
+  
+  .btn-group{
+    margin-right:1rem;
+  }
+
+  #select_box{
+    background-color: #6C757C; /* Green */
+    border: none;
+    color: white;
+    padding: .1rem .5rem;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: .1rem;
+  }
+
   #inputZipWord {
     color: white; 
   }

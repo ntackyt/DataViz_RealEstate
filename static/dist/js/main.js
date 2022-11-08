@@ -1,6 +1,10 @@
 window.onload = init;
 
-function init(){
+function init(){  
+  //initial: hide legend
+  document.getElementById("county-legend").style.display = "none";
+  document.getElementById("state-legend").style.display = "none";
+
   const map = new ol.Map({
       view: new ol.View({
           center: [-8528855.151432998, 4762665.100871488], 
@@ -121,6 +125,18 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         let baseLayerTitle = element.get('title');
         element.setVisible(baseLayerTitle === baseLayerElementValue);
       })
+      var countyLegShow = document.getElementById("county-legend");
+      var stateLegShow = document.getElementById("state-legend");
+      if (baseLayerElementValue == "baseCountiesGeoJson") {
+        stateLegShow.style.display = "none";
+        countyLegShow.style.display = "block";
+      } else if (baseLayerElementValue == "statesGeoJson"){
+        countyLegShow.style.display = "none";
+        stateLegShow.style.display = "block";
+      }else{
+        countyLegShow.style.display = "none";
+        stateLegShow.style.display = "none"; 
+      }
     })
   }
 
@@ -280,4 +296,27 @@ var baseCountiesGeoJson = new ol.layer.Vector({
     } */ 
   });
 
+
+// dropdown state selection - change map for every selection
+  let dropdownList = document.getElementById('select_box');
+  dropdownList.onchange = (ev) =>{
+    console.log("Selected state is: " + dropdownList.value);
+    var stateSelect = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        format: new ol.format.GeoJSON(),
+        url: `static/dist/js/US_State.geojson`
+      }),
+      zIndex: 1, 
+      style: function (feature, resolution) {
+        if(feature.get('RDC_State_state') == dropdownList.value){
+          return styles_state(feature, resolution);
+        }
+    },
+      
+    });
+    map.addLayer(stateSelect)
+
+  }
+  
 }
+

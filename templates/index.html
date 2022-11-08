@@ -37,85 +37,63 @@
             <a class="btn btn-secondary" href="https://public.tableau.com/views/State_Graphs/AK?:language=en-US&:display_count=n&:origin=viz_share_link" role="button">Tableau</a>
           </div>
           <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              State 
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#top">Alabama</a>
-              <a class="dropdown-item" href="#top">Alaska</a>
-              <a class="dropdown-item" href="#top">Arizona</a>
-              <a class="dropdown-item" href="#top">Arkansas</a>
-              <a class="dropdown-item" href="#top">California</a>
-              <a class="dropdown-item" href="#top">Colorado</a>
-              <a class="dropdown-item" href="#top">Connecticut</a>
-              <a class="dropdown-item" href="#top">Delaware</a>
-              <a class="dropdown-item" href="#top">District of Columbia</a>
-              <a class="dropdown-item" href="#top">Florida</a>
-              <a class="dropdown-item" href="#top">Georgia</a>
-              <a class="dropdown-item" href="#top">Hawaii</a>
-              <a class="dropdown-item" href="#top">Idaho</a>
-              <a class="dropdown-item" href="#top">Illinois</a>
-              <a class="dropdown-item" href="#top">Indiana</a>
-              <a class="dropdown-item" href="#top">Iowa</a>
-              <a class="dropdown-item" href="#top">Kansas</a>
-              <a class="dropdown-item" href="#top">Kentucky</a>
-              <a class="dropdown-item" href="#top">Louisiana</a>
-              <a class="dropdown-item" href="#top">Maine</a>
-              <a class="dropdown-item" href="#top">Maryland</a>
-              <a class="dropdown-item" href="#top">Massachusetts</a>
-              <a class="dropdown-item" href="#top">Michigan</a>
-              <a class="dropdown-item" href="#top">Minnesota</a>
-              <a class="dropdown-item" href="#top">Mississippi</a>
-              <a class="dropdown-item" href="#top">Missouri</a>
-              <a class="dropdown-item" href="#top">Montana</a>
-              <a class="dropdown-item" href="#top">Nebraska</a>
-              <a class="dropdown-item" href="#top">Nevada</a>
-              <a class="dropdown-item" href="#top">New Hampshire</a>
-              <a class="dropdown-item" href="#top">New Jersey</a>
-              <a class="dropdown-item" href="#top">New Mexico</a>
-              <a class="dropdown-item" href="#top">New York</a>
-              <a class="dropdown-item" href="#top">North Carolina</a>
-              <a class="dropdown-item" href="#top">North Dakota</a>
-              <a class="dropdown-item" href="#top">Ohio</a>
-              <a class="dropdown-item" href="#top">Oklahoma</a>
-              <a class="dropdown-item" href="#top">Oregon</a>
-              <a class="dropdown-item" href="#top">Pennsylvania</a>
-              <a class="dropdown-item" href="#top">Rhode Island</a>
-              <a class="dropdown-item" href="#top">South Carolina</a>
-              <a class="dropdown-item" href="#top">South Dakota</a>
-              <a class="dropdown-item" href="#top">Tennessee</a>
-              <a class="dropdown-item" href="#top">Texas</a>
-              <a class="dropdown-item" href="#top">Utah</a>
-              <a class="dropdown-item" href="#top">Vermont</a>
-              <a class="dropdown-item" href="#top">Virginia</a>
-              <a class="dropdown-item" href="#top">Washington</a>
-              <a class="dropdown-item" href="#top">West Virginia</a>
-              <a class="dropdown-item" href="#top">Wisconsin</a>
-              <a class="dropdown-item" href="#top">Wyoming</a>
-
-        <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            City
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
+            <select id="select_box">    
+              <option value="Select State" selected="selected">Select State</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska" >Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District of Columbia">District of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missour</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
         </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Zipcode
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div> -->
-
-        <div class="dropdown">
+        <!-- <div class="btn-group">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Price
           </button>
@@ -124,35 +102,7 @@
             <li><a class="dropdown-item" href="#top">Min ...</a></li>
             <li><a class="dropdown-item" href="#top">Other ...</a></li>
           </ul>
-        </div>
-
-        <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Bed & Baths
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Home Type
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#top">Max ...</a></li>
-            <li><a class="dropdown-item" href="#top">Min ...</a></li>
-            <li><a class="dropdown-item" href="#top">Other ...</a></li>
-          </ul>
         </div> -->
-
-      <!-- <div class="col-md-3">
-        <form role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        </form>
-      </div> -->
     </nav>
 
 
@@ -250,7 +200,7 @@
       <span class="appreciation-text" id="apr-prices"></span><br>
     </div>
 
-    <!-- LEGEND -->
+    <!-- LEGEND (state) -->
     <div id="state-legend" class="legend"> 
         <h4> Median Price </br> by State </h4>
         <div><span style="background-color: #fee6ce; opacity: .6;"></span>217000</div>
@@ -262,7 +212,17 @@
         <div><span style="background-color: #8c2d04; opacity: .6;"></span>879500</div>
     </div>
 
-  
+      <!-- LEGEND (county) -->
+      <div id="county-legend" class="legend"> 
+        <h4> Median Price </br> by county </h4>
+        <div><span style="background-color: #fee6ce; opacity: .6;"></span>217000</div>
+        <div><span style="background-color: #fdd0a2; opacity: .6;"></span>327000</div>
+        <div><span style="background-color: #fdae6b; opacity: .6;"></span>329971</div>
+        <div><span style="background-color: #fd8d3c; opacity: .6;"></span>397479</div>
+        <div><span style="background-color: #f16913; opacity: .6;"></span>464986</div>
+        <div><span style="background-color: #d94801; opacity: .6;"></span>532493</div>
+        <div><span style="background-color: #8c2d04; opacity: .6;"></span>600000</div>
+    </div>
 
     <!-- SCRIPT (JS/JQUERY) -->
     <!-- <script src="{{ url_for('static', filename='dist/js/dashboard.js')}}"></script> -->
