@@ -267,6 +267,7 @@ var baseCountiesGeoJson = new ol.layer.Vector({
   map.addOverlay(hoverLayer);
 
   const hoverCounty = document.getElementById('feature-hover');
+  const hoverImg = document.getElementById('feature-img');
 
   let hoverElement = null;
   map.on('pointermove', function (e) {
@@ -290,6 +291,7 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         hoverCounty.innerHTML = hoverElement.get('RDC_County_county_name') + " County";
       } else {
         hoverCounty.innerHTML = hoverElement.get('RDC_State_state');
+        hoverImg.src = "trends/" + hoverElement.get('stusab') + ".png";
       }
     } /* else {
       hoverCounty.innerHTML = '&nbsp;';
