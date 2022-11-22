@@ -4,6 +4,7 @@ function init(){
   //initial: hide legend
   document.getElementById("county-legend").style.display = "none";
   document.getElementById("state-legend").style.display = "none";
+  document.getElementById("trend-div").style.display = "none";
 
   const map = new ol.Map({
       view: new ol.View({
@@ -127,15 +128,20 @@ var baseCountiesGeoJson = new ol.layer.Vector({
       })
       var countyLegShow = document.getElementById("county-legend");
       var stateLegShow = document.getElementById("state-legend");
+      var trendsLegShow = document.getElementById("trend-div");
+
       if (baseLayerElementValue == "baseCountiesGeoJson") {
         stateLegShow.style.display = "none";
         countyLegShow.style.display = "block";
+        trendsLegShow.style.display = "none";
       } else if (baseLayerElementValue == "statesGeoJson"){
         countyLegShow.style.display = "none";
         stateLegShow.style.display = "block";
+        trendsLegShow.style.display = "block";
       }else{
         countyLegShow.style.display = "none";
         stateLegShow.style.display = "none"; 
+        trendsLegShow.style.display = "none";
       }
     })
   }
@@ -267,7 +273,6 @@ var baseCountiesGeoJson = new ol.layer.Vector({
   map.addOverlay(hoverLayer);
 
   const hoverCounty = document.getElementById('feature-hover');
-  const hoverImg = document.getElementById('feature-img');
 
   let hoverElement = null;
   map.on('pointermove', function (e) {
@@ -291,7 +296,9 @@ var baseCountiesGeoJson = new ol.layer.Vector({
         hoverCounty.innerHTML = hoverElement.get('RDC_County_county_name') + " County";
       } else {
         hoverCounty.innerHTML = hoverElement.get('RDC_State_state');
-        hoverImg.src = "trends/" + hoverElement.get('stusab') + ".png";
+        document.getElementById('trend-img').innerHTML = hoverElement.get('RDC_State_state');
+        var pic = "/static/dist/js/trends/" + hoverElement.get('stusab') + ".png";
+        document.getElementById('trend-img').src = pic;
       }
     } /* else {
       hoverCounty.innerHTML = '&nbsp;';
